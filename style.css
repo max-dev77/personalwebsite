@@ -4,15 +4,22 @@
   padding: 0;
 }
 
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
 body {
   background-color: grey;
   font-family: "Satoshi", sans-serif;
   font-weight: 300;
+  height: 100vh;
 }
 
 .mainContent {
   padding: 16px;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -46,15 +53,26 @@ body {
   flex: 1;
   display: flex;
   gap: 16px;
+  overflow: hidden;
 }
 
+/* main cards */
+.leftCard,
+.middleCard,
+.rightCard {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  overflow: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05), 0 0 8px rgba(74, 144, 226, 0.2);
+}
 
 /* Left Card */
 .leftCard {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   flex: 1;
 }
 
@@ -92,34 +110,95 @@ body {
 }
 
 .socials {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    gap: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 16px;
 }
 
-.socials img{
-    width: 32px;
-    height: 32px;
+.socials img {
+  width: 32px;
+  height: 32px;
 }
 
-
-/* Middle Card */
+/* middle card */
 .middleCard {
   flex: 2;
-}
-
-/* Right Card */
-.rightCard {
-  flex: 1;
-}
-
-.leftCard,
-.middleCard,
-.rightCard {
-  background: rgba(255, 255, 255, 0.7);
+  background: linear-gradient(135deg, #8a2be2, #a64bf4, #ff7f50, #ff6e3a);
+  background-size: 200% 200%;
+  animation: chromeShift 10s ease infinite;
   backdrop-filter: blur(10px);
   border-radius: 16px;
+  overflow: auto;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05), 0 0 8px rgba(74, 144, 226, 0.2);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@keyframes chromeShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.middleHero{
+    color: wheat;
+    margin-left: 32px;
+}
+
+.middleHero h1:first-of-type {
+  font-size: 2rem; /* hey, */
+}
+
+.middleHero h2 {
+  font-size: 1.5rem; /* i am */
+}
+
+.middleHero h1:last-of-type {
+  font-size: 4rem; /* <taketdev/> */
+}
+
+/* right card */
+.rightCard {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rightCard h2 {
+  margin-top: 32px;
+}
+
+.projectSection {
+  margin: 16px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.projects {
+  width: 100%;
+  gap: 16px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.projectPicture {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: aquamarine;
+  background: aquamarine center/cover no-repeat; /* später: url(...) */
+  border-radius: 12px;
 }
