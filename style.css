@@ -91,6 +91,19 @@ body {
   opacity: 0.9;
 }
 
+.socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.socials img{
+    width: 32px;
+    height: 32px;
+}
+
 
 /* Middle Card */
 .middleCard {
