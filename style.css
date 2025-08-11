@@ -6,7 +6,10 @@
 
 body{
     background-color: grey;
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 300; 
 }
+
 
 .mainContent {
     padding: 16px;
@@ -48,6 +51,11 @@ body{
 
 .leftCard {
   flex: 1;
+}
+
+.infoPicture img {
+    height: 176px;
+    border-radius: 50%;
 }
 
 .middleCard {
