@@ -25,7 +25,7 @@ body {
 }
 
 .header {
-  height: 86px;
+  height: 80px;
   border-radius: 26px;
   margin-bottom: 16px;
   background: rgba(255, 255, 255, 0.8);
@@ -177,6 +177,7 @@ body {
 
 .rightCard h2 {
   margin-top: 32px;
+  margin-left: 16px;
 }
 
 .projectSection {
@@ -201,4 +202,51 @@ body {
   background-color: aquamarine;
   background: aquamarine center/cover no-repeat; /* später: url(...) */
   border-radius: 12px;
+}
+
+/* Basis-Zustand */
+.CollapsedContent { display: block; }
+.ExpandedContent {
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity .25s ease, max-height .25s ease, visibility 0s linear .25s;
+}
+
+/* weiche Größen-Transitions für Karten */
+.leftCard, .middleCard, .rightCard {
+  transition: flex .3s ease, transform .3s ease, box-shadow .3s ease;
+}
+
+/* Expand Left */
+.cardSection.expandLeft .leftCard { flex: 3; }
+.cardSection.expandLeft .rightCard { flex: 1; }
+.cardSection.expandLeft .leftCard .ExpandedContent {
+  opacity: 1; visibility: visible; max-height: 1000px;
+  transition: opacity .25s ease, max-height .25s ease;
+}
+
+/* Expand Right */
+.cardSection.expandRight .rightCard { flex: 3; }
+.cardSection.expandRight .leftCard { flex: 1; }
+.cardSection.expandRight .rightCard .ExpandedContent {
+  opacity: 1; visibility: visible; max-height: 1000px;
+  transition: opacity .25s ease, max-height .25s ease;
+}
+
+/* MiddleCard sanft ausblenden & Platz freigeben */
+.middleCard {
+  transition: opacity .25s ease, flex .3s ease, max-width .3s ease, margin .3s ease;
+}
+
+.cardSection.expandLeft .middleCard,
+.cardSection.expandRight .middleCard {
+  opacity: 0;
+  visibility: hidden;                 /* nach Fade unsichtbar */
+  flex: 0 0 0;                        /* nimmt keinen Platz mehr ein */
+  max-width: 0;
+  margin: 0;
+  pointer-events: none;
+  transition: opacity .25s ease, flex .3s ease, max-width .3s ease, margin .3s ease, visibility 0s linear .25s;
 }
