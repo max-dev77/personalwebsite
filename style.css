@@ -136,13 +136,24 @@ body {
   margin-left: 32px;
 }
 
-.skillIcons {
-  display: flex;
-  gap: 8px;
+.skillSection{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .skillSection img{
   width: 48px;
+}
+
+.expandedLeftContent {
+  margin: 64px;
+}
+
+.skillIcons {
+  display: flex;
+  gap: 8px;
 }
 
 .cardSection.expandLeft .leftCard {
@@ -160,6 +171,11 @@ body {
  align-items: flex-start;
 text-align: center;
 margin-top: 64px;
+}
+
+.beyondCodeSection {
+  margin-top: 64px;
+  margin-bottom: 64px;
 }
 
 /* middle card */
