@@ -132,8 +132,9 @@ body {
 .cardSection.expandLeft .leftCard .CollapsedContent {
   display: flex;
   flex-direction: column;
-  align-self: flex-start;
+  align-self: center;
   margin-left: 32px;
+  flex: 1;
 }
 
 .skillSection{
@@ -168,9 +169,8 @@ body {
  flex: 2;
  display: flex;
  justify-content: center;
- align-items: flex-start;
-text-align: center;
-margin-top: 64px;
+ align-items: center;
+ text-align: center;
 }
 
 .beyondCodeSection {
