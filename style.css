@@ -71,9 +71,14 @@ body {
 .leftCard {
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   flex-direction: column;
   flex: 1;
+}
+
+.leftCardContent{
+  display: flex;
+  margin-top: 32px;
 }
 
 .pictureSection {
@@ -127,9 +132,34 @@ body {
 .cardSection.expandLeft .leftCard .CollapsedContent {
   display: flex;
   flex-direction: column;
-  max-width: 300px;
   align-self: flex-start;
   margin-left: 32px;
+}
+
+.skillIcons {
+  display: flex;
+  gap: 8px;
+}
+
+.skillSection img{
+  width: 48px;
+}
+
+.cardSection.expandLeft .leftCard {
+  flex-direction: row;
+}
+
+.cardSection.expandLeft .leftCard .CollapsedContent {
+  flex: 1;
+}
+
+.cardSection.expandLeft .leftCard .ExpandedContent {
+ flex: 2;
+ display: flex;
+ justify-content: center;
+ align-items: flex-start;
+text-align: center;
+margin-top: 64px;
 }
 
 /* middle card */
