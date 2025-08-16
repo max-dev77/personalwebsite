@@ -11,7 +11,7 @@ body {
 }
 
 body {
-  background-color: grey;
+  background-color: #e7ecff;
   font-family: "Satoshi", sans-serif;
   font-weight: 300;
   height: 100vh;
@@ -28,7 +28,7 @@ body {
   height: 80px;
   border-radius: 26px;
   margin-bottom: 16px;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgb(255, 255, 255);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   box-shadow: 0 0 12px rgba(74, 144, 226, 0.25);
@@ -60,7 +60,7 @@ body {
 .leftCard,
 .middleCard,
 .rightCard {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(251, 252, 255, 0.7);
   backdrop-filter: blur(10px);
   border-radius: 16px;
   overflow: auto;
@@ -122,10 +122,20 @@ body {
   height: 32px;
 }
 
+/* left card expanded */
+
+.cardSection.expandLeft .leftCard .CollapsedContent {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  align-self: flex-start;
+  margin-left: 32px;
+}
+
 /* middle card */
 .middleCard {
   flex: 2;
-  background: linear-gradient(135deg, #8a2be2, #a64bf4, #ff7f50, #ff6e3a);
+  background: linear-gradient(14deg, #8a2be2, #a64bf4, #ff7f50, #ff6e3a);
   background-size: 200% 200%;
   animation: chromeShift 10s ease infinite;
   backdrop-filter: blur(10px);
