@@ -78,7 +78,6 @@ body {
 
 .leftCardContent{
   display: flex;
-  margin-top: 32px;
 }
 
 .pictureSection {
@@ -128,7 +127,6 @@ body {
 }
 
 /* left card expanded */
-
 .cardSection.expandLeft .leftCard .CollapsedContent {
   display: flex;
   flex-direction: column;
@@ -159,7 +157,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 64px;
+  justify-content: space-evenly;
+  height: 100%;
 }
 
 .skillIcons {
@@ -177,6 +176,7 @@ body {
 
 .cardSection.expandLeft .leftCard .ExpandedContent {
  flex: 2;
+ margin: 0 32px;
  display: flex;
  justify-content: center;
  align-items: center;
@@ -261,8 +261,36 @@ body {
   width: 100%;
   aspect-ratio: 16 / 9;
   background-color: aquamarine;
-  background: aquamarine center/cover no-repeat; /* später: url(...) */
+  background: aquamarine center/cover no-repeat; /* later: url(...) */
   border-radius: 12px;
+}
+
+.cardSection.expandRight .rightCard .ExpandedContent {
+  padding: 16px;
+}
+
+.cardSection.expandRight .rightCard .ExpandedContent h2 {
+  margin: 8px 0 16px 0;
+}
+
+.cardSection.expandRight .rightCard .projectGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  align-content: start;
+}
+
+.cardSection.expandRight .rightCard .projectGrid .projects {
+  background: rgba(255,255,255,0.7);
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.06);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.cardSection.expandRight .rightCard .projectGrid .projects:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,.12);
 }
 
 /* Basis-Zustand */
@@ -275,12 +303,10 @@ body {
   transition: opacity .25s ease, max-height .25s ease, visibility 0s linear .25s;
 }
 
-/* weiche Größen-Transitions für Karten */
 .leftCard, .middleCard, .rightCard {
   transition: flex .3s ease, transform .3s ease, box-shadow .3s ease;
 }
 
-/* Expand Left */
 .cardSection.expandLeft .leftCard { flex: 3; }
 .cardSection.expandLeft .rightCard { flex: 1; }
 .cardSection.expandLeft .leftCard .ExpandedContent {
@@ -288,7 +314,6 @@ body {
   transition: opacity .25s ease, max-height .25s ease;
 }
 
-/* Expand Right */
 .cardSection.expandRight .rightCard { flex: 3; }
 .cardSection.expandRight .leftCard { flex: 1; }
 .cardSection.expandRight .rightCard .ExpandedContent {
@@ -296,7 +321,6 @@ body {
   transition: opacity .25s ease, max-height .25s ease;
 }
 
-/* MiddleCard sanft ausblenden & Platz freigeben */
 .middleCard {
   transition: opacity .25s ease, flex .3s ease, max-width .3s ease, margin .3s ease;
 }
@@ -304,8 +328,8 @@ body {
 .cardSection.expandLeft .middleCard,
 .cardSection.expandRight .middleCard {
   opacity: 0;
-  visibility: hidden;                 /* nach Fade unsichtbar */
-  flex: 0 0 0;                        /* nimmt keinen Platz mehr ein */
+  visibility: hidden;
+  flex: 0 0 0;
   max-width: 0;
   margin: 0;
   pointer-events: none;
